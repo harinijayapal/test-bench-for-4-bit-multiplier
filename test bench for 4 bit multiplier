@@ -1,0 +1,36 @@
+module MULTIPLIER_TEST;
+
+	// Inputs
+	reg [3:0] a;
+	reg [3:0] b;
+
+	// Outputs
+	wire [7:0] c;
+
+	// Instantiate the Unit Under Test (UUT)
+	MULTIPLIER1 uut (
+		.a(a), 
+		.b(b), 
+		.c(c)
+	);
+
+	initial begin
+		// Initialize Inputs
+		a = 0;
+		b = 0;
+
+		// Wait 100 ns for global reset to finish
+		a=101;
+		b=011;
+		#100;
+		a=101;
+		b=101;
+		#100;
+		a=111; 
+		b=11;
+        
+		// Add stimulus here
+
+	end
+      
+endmodule
